@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config();
 const DBConnection = require("./config/db");
 const userRouter = require("./routes/user.routes");
 const noteRouter = require("./routes/note.ROUTES.JS");
@@ -23,8 +24,8 @@ app.use("/notes", noteRouter)
 app.use((req,res)=>{
     res.send("this route is not defined")
 })
-
-app.listen(8080, async () => {
+const PORT = process.env.PORT 
+app.listen(PORT, async () => {
     try {
         await DBConnection()
         console.log("server is running");
