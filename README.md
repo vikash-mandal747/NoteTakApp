@@ -1,5 +1,5 @@
 
-
+B_E_Deploy_Link = https://notetakapp.onrender.com
 
 DAY1: We are going to focus on building the BE for our notes taking application with following features:
 - A new user should be able to register.
@@ -21,3 +21,4 @@ Notes CRUD
 
 
 # mongodb://127.0.0.1:27017/noteAppDB
+
