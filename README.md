@@ -16,3 +16,8 @@ Notes CRUD
 - Update: /notes/update/:noteID ⇒ PATCH
 - Delete: /notes/delete/:noteID ⇒ DELETE
 - All these routes should be restricted, also a user shiould be able to Read, Update and Delete his or her notes only
+
+
+
+
+# mongodb://127.0.0.1:27017/noteAppDB
