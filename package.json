@@ -1,0 +1,21 @@
+{
+  "name": "notetakingapp",
+  "version": "1.0.0",
+  "description": "DAY1: We are going to focus on building the BE for our notes taking application with following features:\r - A new user should be able to register.\r - A registered user should be able to authenticate.\r - A user should be able to create a new note.\r - A user should be able view/his/her notes.\r - A user should be able update his/her notes.\r - A user should be able delete his/her notes.",
+  "main": "index.js",
+  "scripts": {
+    "server":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.1",
+    "nodemon": "^3.1.10"
+  }
+}
