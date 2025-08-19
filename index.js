@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
     res.send("home page")
 })
 
-//user 
+///user 
 app.use("/user", userRouter)
 
 //note
