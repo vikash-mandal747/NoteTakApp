@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Dashboard</h1>
+    <div id="container">
+    </div>
+</body>
+
+</html>
+
+<script>
+    let cont = document.getElementById("container");
+    function getData() {
+        fetch('https://notetakapp.onrender.com/notes/', {
+            method: "GET",
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data.note[0].title)
+                let h1 = document.createElement("h1");
+                let h3 = document.createElement("h3");
+
+                h1.textContent = `${data.note[0].title}`
+                h3.textContent = `${data.note[0].body}`
+
+
+                let div = document.createElement("div");
+                div.appendChild(h1)
+                div.appendChild(h3)
+
+                cont.append(div)
+            })
+    }
+    getData()
+</script>

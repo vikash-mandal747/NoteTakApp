@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Login Page</h2>
+        <input id="email" type="email" placeholder="email">
+        <input id="pass" type="password" placeholder="password">
+        <button onclick="handleLogin()">Login</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function handleLogin() {
+        const email = document.getElementById("email").value;
+        const pass = document.getElementById("pass").value;
+
+        fetch('https://notetakapp.onrender.com/user/login', {
+            method: "POST",
+            headers: {
+                "Content-type": `application/json`
+            },
+            body: JSON.stringify({ email, pass })
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                localStorage.setItem("token", data.token)
+                console.log(data);
+                alert(`${data.msg}`)
+                location.href = "dashboard.html"
+            })
+            .catch((err) => console.log("Error:",err.message))
+    }
+
+
+</script>
